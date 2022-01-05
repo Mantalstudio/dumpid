@@ -6,8 +6,8 @@
  pip2 install requests
  pip2 install mechanize
  pip2 install bs4
- git clone https://github.com/ROMI-AFRZL/dump-id
- cd dump-id
- python2 dump.py
+ git clone https://github.com/Mantalstudio/dumpid-
+ cd dumpid-
+ python2 dum.py
 ````
 Dump id facebook. login Token & Cookie facebook
