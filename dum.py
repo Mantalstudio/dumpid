@@ -30,19 +30,7 @@ br.addheaders = [('User-Agent', 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Bui
 os.system('clear')
 done = False
 
-#def animate():
- #   for c in itertools.cycle(['\x1b[0;91m.', '\x1b[0;93m.', '\x1b[0;91m.', '\x1b[0;93m.']):
-   #     if done:
-        #    break
-    #    sys.stdout.write('\r\x1b[0;97mLoading ' + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c)
-      #  sys.stdout.flush()
-        #time.sleep(0.1)
 
-
-#t = threading.Thread(target=animasis)
-#t.start()
-#time.sleep(5)
-#done = True
 
 def keluar():
     print '\x1b[0;91m•\x1b[0;93m See you :)\x1b[0;97m'
@@ -279,7 +267,7 @@ def idfrom_teman():
         print 50 * '\x1b[1;91m\xe2\x94\x80'
         idt = raw_input(' User ID Target : ')
         try:
-            jok = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + toket)
+            jok = requests.get('https://graph.facebook.com/v2.0/'+idt+'?fields=friends.limit(5000)&access_token='+toket[0]).json()
             op = json.loads(jok.text)
             print ' Account name    : ' + op['name']
         except KeyError:
@@ -287,7 +275,7 @@ def idfrom_teman():
             raw_input('\n\x1b[1;93m[\x1b[1;91mKembali\x1b[1;93m]')
             dump()
 
-        r = requests.get('https://graph.facebook.com/' + idt + '?fields=friends.limit(50000)&access_token=' + toket)
+        r = requests.get('https://graph.facebook.com/v2.0/'+idt+'?fields=friends.limit(5000)&access_token='+toket[0]).json()
         z = json.loads(r.text)
         jalan('\x1b[1;95m • \x1b[1;91mRetrieve all Friend IDs \x1b[1;97m...')
         print 50 * '\x1b[1;91m\xe2\x94\x80'
