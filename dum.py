@@ -267,7 +267,7 @@ def idfrom_teman():
         print 50 * '\x1b[1;91m\xe2\x94\x80'
         idt = raw_input(' User ID Target : ')
         try:
-            jok = requests.get('https://graph.facebook.com/v2.0/'+idt+'?fields=friends.limit(5000)&access_token='+toket[0]).json()
+            jok = requests.get('https://graph.facebook.com/v2.0/'+ idt +'?access_token='+toket[0]).json()
             op = json.loads(jok.text)
             print ' Account name    : ' + op['name']
         except KeyError:
@@ -275,7 +275,7 @@ def idfrom_teman():
             raw_input('\n\x1b[1;93m[\x1b[1;91mKembali\x1b[1;93m]')
             dump()
 
-        r = requests.get('https://graph.facebook.com/v2.0/'+idt+'?fields=friends.limit(5000)&access_token='+toket[0]).json()
+        r = requests.get('https://graph.facebook.com/v2.0/'+ idt +'?fields=friends.limit(500000)&access_token='+toket[0]).json()
         z = json.loads(r.text)
         jalan('\x1b[1;95m • \x1b[1;91mRetrieve all Friend IDs \x1b[1;97m...')
         print 50 * '\x1b[1;91m\xe2\x94\x80'
