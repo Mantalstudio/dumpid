@@ -1,5 +1,5 @@
 #-*-coding:utf-8-*-
-# coding by Hamza
+# coding by Muhammad Hamza
 import os, re, sys, itertools, time, requests, random, threading, json, random
 from multiprocessing.pool import ThreadPool
 from requests.exceptions import ConnectionError
@@ -30,19 +30,7 @@ br.addheaders = [('User-Agent', 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Bui
 os.system('clear')
 done = False
 
-#def animate():
- #   for c in itertools.cycle(['\x1b[0;91m.', '\x1b[0;93m.', '\x1b[0;91m.', '\x1b[0;93m.']):
-   #     if done:
-        #    break
-    #    sys.stdout.write('\r\x1b[0;97mLoading ' + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c)
-      #  sys.stdout.flush()
-        #time.sleep(0.1)
 
-
-#t = threading.Thread(target=animasis)
-#t.start()
-#time.sleep(5)
-#done = True
 
 def keluar():
     print '\x1b[0;91m•\x1b[0;93m See you :)\x1b[0;97m'
@@ -72,9 +60,9 @@ def masuk():
     os.system('echo " •••\n  ___  _   _ __  __ ___ \n |   \| | | |  \/  | _ \ \n | |) | |_| | |\/| |  _/ \n |___/ \___/|_|  |_|_|  \n\n •••" | lolcat ')
     print 50 * '\x1b[1;91m\xe2\x94\x80'
     time.sleep(0.07)
-    print '\x1b[1;97m1). Login Via Token Facebook'
+    print '\x1b[1;97m1). Login Wi Token Facebook'
     time.sleep(0.07)
-    print '\x1b[1;97m2). Login Via Cookie Facebook'
+    print '\x1b[1;97m2). Login With Cookie Facebook'
     time.sleep(0.07)
     print '\x1b[1;91m0\x1b[1;97m).\x1b[1;97m Exit'
     time.sleep(0.07)
@@ -84,9 +72,9 @@ def masuk():
 
 
 def pilih_masuk():
-    msuk = raw_input('* --> ')
+    msuk = raw_input('* •••> ')
     if msuk == '':
-        print ' Isi Yg Benar Sayang!'
+        print ' Correct Contents Dear!'
         pilih_masuk()
     elif msuk == '1':
         login_token()
@@ -95,13 +83,13 @@ def pilih_masuk():
     elif msuk == '0':
         os.sys.exit()
     else:
-        print ' Isi Yg Benar Sayang!'
+        print ' Correct Contents Dear!'
         pilih_masuk()
 
 def login_token():
     os.system('clear')
     os.system('echo " •••\n  ___  _   _ __  __ ___ \n |   \| | | |  \/  | _ \ \n | |) | |_| | |\/| |  _/ \n |___/ \___/|_|  |_|_|  \n\n •••" | lolcat ')
-    print 50 * '\x1b[1;91m\xe2\x94\x80'
+    print 50 * '\x1b[1;92m\xe2\x94\x80'
     toket = raw_input(' Token \x1b[1;94m>\x1b[1;93m ')
     try:
         otw = requests.get('https://graph.facebook.com/me?access_token=' + toket)
@@ -143,7 +131,7 @@ def login_cookie():
         zedd = open('login.txt', 'w')
         zedd.write(hasil)
         zedd.close()
-        jalan ('\x1b[1;92m Login Berhasil !\x1b[0;97m ')
+        jalan ('\x1b[1;92m Login Successful !\x1b[0;97m ')
         time.sleep(2)
         dump()
     except AttributeError:
@@ -156,7 +144,7 @@ def login_cookie():
         masuk()
     except requests.exceptions.SSLError:
         os.system('clear')
-        print ' Koneksi Bermasalah'
+        print ' Connection Problem'
         exit()
 
 
@@ -176,15 +164,15 @@ def dump():
     print 50 * '\x1b[1;91m\xe2\x94\x80'
     print '\x1b[1;97m1). Dump ID From Friends List '
     print '\x1b[1;97m2). Dump ID From Friends/Public '
-    print '\x1b[1;91m0\x1b[1;97m).\x1b[1;97m Keluar '
+    print '\x1b[1;91m0\x1b[1;97m).\x1b[1;97m Go out '
     print 50 * '\x1b[1;91m\xe2\x94\x80'
     dump_pilih()
 
 
 def dump_pilih(): 
-    cuih = raw_input(' *--> ')
+    cuih = raw_input(' *•••> ')
     if cuih == '':
-        print ' Isi Yg Benar Sayang!'
+        print ' Correct Contents Dear!'
         dump_pilih()
     elif cuih == '1' or cuih == '01':
         id_teman()
@@ -193,7 +181,7 @@ def dump_pilih():
     elif cuih == '0' or cuih == '00':
         hapus()
     else:
-        print ' Isi Yg Benar Sayang!'
+        print ' Correct Contents Dear!'
         dump_pilih()
 
 
@@ -218,43 +206,43 @@ def id_teman():
         print 50 * '\x1b[1;91m\xe2\x94\x80'
         r = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
         z = json.loads(r.text)
-        jalan('\x1b[1;95m • \x1b[1;91mMengambil semua ID Teman \x1b[1;97m...')
+        jalan('\x1b[1;95m • \x1b[1;91mRetrieve all Friend IDs \x1b[1;97m...')
         print 50 * '\x1b[1;91m\xe2\x94\x80'
         bz = open('out/id_teman.txt', 'w')
         for a in z['data']:
             idteman.append(a['id'])
             bz.write(a['id'] + '\n')
-            print '\r\x1b[1;95m • \x1b[1;93m' + str(len(idteman)) + '\x1b[1;93m -> ',
+            print '\r\x1b[1;95m • \x1b[1;93m' + str(len(idteman)) + '\x1b[1;93m •••> ',
             sys.stdout.flush()
             time.sleep(0.005)
             print '\x1b[1;92m' + a['id']
 
         bz.close()
-        print '\n\x1b[1;93m [\x1b[1;92m\xe2\x9c\x93\x1b[1;93m] \x1b[1;92mSukses Mengambil ID '
+        print '\n\x1b[1;93m [\x1b[1;92m\xe2\x9c\x93\x1b[1;93m] \x1b[1;92mSuccess Taking ID '
         print '\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92mTotal ID\x1b[1;91m :\x1b[1;92m %s' % len(idteman)
-        done = raw_input('\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92msave Nama File\x1b[1;91m : \x1b[1;92m')
+        done = raw_input('\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92msave File Name\x1b[1;91m : \x1b[1;92m')
         os.rename('out/id_teman.txt', 'out/' + done)
         print '\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92m File stored \x1b[1;91m: \x1b[1;92mout/' + done
-        raw_input('\n\x1b[1;93m [\x1b[1;91mKembali\x1b[1;93m]')
+        raw_input('\n\x1b[1;93m [\x1b[1;91mReturn\x1b[1;93m]')
         dump()
     except IOError:
         print '\x1b[1;91m Failed to create file'
-        raw_input('\n\x1b[1;93m [\x1b[1;91mKembali\x1b[1;93m]')
+        raw_input('\n\x1b[1;93m [\x1b[1;91mReturn\x1b[1;93m]')
         dump()
     except (KeyboardInterrupt, EOFError):
-        print '\x1b[1;91m Terhenti ! '
-        raw_input('\n\x1b[1;93m [\x1b[1;91mKembali\x1b[1;93m]')
+        print '\x1b[1;91m stop ! '
+        raw_input('\n\x1b[1;93m [\x1b[1;91mReturn\x1b[1;93m]')
         dump()
     except KeyError:
-        print '\x1b[1;91m Gagal '
-        raw_input('\n\x1b[1;93m [\x1b[1;91mKembali\x1b[1;93m]')
+        print '\x1b[1;91m Fail '
+        raw_input('\n\x1b[1;93m [\x1b[1;91mReturn\x1b[1;93m]')
         dump()
     except OSError:
         print '\x1b[1;91m Your file is not saved !'
-        raw_input('\n\x1b[1;93m [\x1b[1;91mKembali\x1b[1;93m]')
+        raw_input('\n\x1b[1;93m [\x1b[1;91mReturn\x1b[1;93m]')
         dump()
     except requests.exceptions.ConnectionError:
-        print '\x1b[1;91m Tidak ada koneksi !'
+        print '\x1b[1;91m No connection !'
         keluar()
 
 
@@ -295,7 +283,7 @@ def idfrom_teman():
         for a in z['friends']['data']:
             idfromteman.append(a['id'])
             bz.write(a['id'] + '\n')
-            print '\r\x1b[1;95m • \x1b[1;93m' + str(len(idfromteman)) + '\x1b[1;93m -> ',
+            print '\r\x1b[1;95m • \x1b[1;93m' + str(len(idfromteman)) + '\x1b[1;93m •••> ',
             sys.stdout.flush()
             time.sleep(0.005)
             print '\x1b[1;92m' + a['id']
@@ -303,9 +291,9 @@ def idfrom_teman():
         bz.close()
         print '\n\x1b[1;93m [\x1b[1;92m\xe2\x9c\x93\x1b[1;93m] \x1b[1;92mSuccessful Take ID '
         print '\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92mTotal ID\x1b[1;91m :\x1b[1;92m %s' % len(idfromteman)
-        done = raw_input('\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92mSimpan Nama File\x1b[1;91m : \x1b[1;92m')
+        done = raw_input('\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92msave File Name\x1b[1;91m : \x1b[1;92m')
         os.rename('out/id_teman_from_teman.txt', 'out/' + done)
-        print '\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92mFile tersimpan \x1b[1;91m: \x1b[1;92mout/' + done
+        print '\r\x1b[1;93m [\x1b[1;92m\xe2\x80\xa2\x1b[1;93m] \x1b[1;92mSaved files\x1b[1;91m: \x1b[1;92mout/' + done
         raw_input('\n\x1b[1;93m [\x1b[1;91mKembali\x1b[1;93m]')
         dump()
     except OSError:
