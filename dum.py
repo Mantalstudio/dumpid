@@ -30,7 +30,19 @@ br.addheaders = [('User-Agent', 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Bui
 os.system('clear')
 done = False
 
+#def animate():
+ #   for c in itertools.cycle(['\x1b[0;91m.', '\x1b[0;93m.', '\x1b[0;91m.', '\x1b[0;93m.']):
+   #     if done:
+        #    break
+    #    sys.stdout.write('\r\x1b[0;97mLoading ' + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c + c)
+      #  sys.stdout.flush()
+        #time.sleep(0.1)
 
+
+#t = threading.Thread(target=animasis)
+#t.start()
+#time.sleep(5)
+#done = True
 
 def keluar():
     print '\x1b[0;91m•\x1b[0;93m See you :)\x1b[0;97m'
