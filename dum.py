@@ -59,15 +59,15 @@ def masuk():
     os.system('clear')
     os.system('echo " •••\n  ___  _   _ __  __ ___ \n |   \| | | |  \/  | _ \ \n | |) | |_| | |\/| |  _/ \n |___/ \___/|_|  |_|_|  \n\n •••" | lolcat ')
     print 50 * '\x1b[1;91m\xe2\x94\x80'
+    time.sleep(0.007)
+    print '\x1b[1;97m2). Login Wi Token Facebook'
     time.sleep(0.07)
-    print '\x1b[1;97m1). Login Wi Token Facebook'
-    time.sleep(0.07)
-    print '\x1b[1;97m2). Login With Cookie Facebook'
+    print '\x1b[1;97m3). Login With Cookie Facebook'
     time.sleep(0.07)
     print '\x1b[1;91m0\x1b[1;97m).\x1b[1;97m Exit'
     time.sleep(0.07)
     print 50 * '\x1b[1;91m\xe2\x94\x80'
-    time.sleep(0.07)
+    time.sleep(0.007)
     pilih_masuk()
 
 
@@ -192,7 +192,7 @@ def id_teman():
     except IOError:
         print ' Token invalid'
         os.system('rm -rf login.txt')
-        time.sleep(0.01)
+        time.sleep(0.001)
         masuk()
 
     try:
@@ -253,7 +253,7 @@ def idfrom_teman():
     except IOError:
         print ' Token Invalid'
         os.system('rm -rf login.txt')
-        time.sleep(0.01)
+        time.sleep(0.001)
         masuk()
 
     try:
