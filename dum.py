@@ -181,7 +181,7 @@ def dump():
     dump_pilih()
 
 
-def dump_pilih():
+def dump_pilih(): 
     cuih = raw_input(' *--> ')
     if cuih == '':
         print ' Isi Yg Benar Sayang!'
