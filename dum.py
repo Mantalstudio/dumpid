@@ -181,15 +181,15 @@ def dump():
     dump_pilih()
 
 
-def dump_Public():
+def dump_pilih():
     cuih = raw_input(' *--> ')
     if cuih == '':
         print ' Isi Yg Benar Sayang!'
-        dump_Public()
+        dump_pilih()
     elif cuih == '1' or cuih == '01':
-        id_friend()
+        id_teman()
     elif cuih == '2' or cuih == '02':
-        idfrom_friend()
+        idfrom_teman()
     elif cuih == '0' or cuih == '00':
         hapus()
     else:
@@ -197,7 +197,7 @@ def dump_Public():
         dump_pilih()
 
 
-def id_friend():
+def id_teman():
     os.system('clear')
     try:
         toket = open('login.txt', 'r').read()
@@ -258,7 +258,7 @@ def id_friend():
         keluar()
 
 
-def idfrom_friend():
+def idfrom_teman():
     os.system('clear')
     try:
         toket = open('login.txt', 'r').read()
